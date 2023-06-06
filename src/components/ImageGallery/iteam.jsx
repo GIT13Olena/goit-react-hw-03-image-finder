@@ -8,12 +8,7 @@ function ImageGalleryItem({ webformatURL, largeImageURL, onImageClick }) {
 
   return (
     <li className="gallery-item">
-      <img
-        src={webformatURL}
-        alt=""
-        className="images"
-        onClick={handleImageClick}
-      />
+      <img src={webformatURL} alt="" onClick={handleImageClick} />
     </li>
   );
 }
