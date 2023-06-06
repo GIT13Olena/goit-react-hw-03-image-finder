@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './ImagesGallery.module.css';
 
 function ImageGalleryItem({ webformatURL, largeImageURL, onImageClick }) {
   function handleImageClick() {
