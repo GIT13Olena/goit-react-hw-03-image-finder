@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
@@ -15,6 +15,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalImageURL, setModalImageURL] = useState('');
+
+  useEffect(() => {
+    if (searchQuery === '') {
+      return;
+    }
+
+    fetchImages(searchQuery, page);
+  }, [searchQuery, page]);
 
   async function fetchImages(searchQuery, page) {
     setIsLoading(true);
